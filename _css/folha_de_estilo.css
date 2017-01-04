@@ -1,24 +1,11 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@font-face {
-	font-family: 'FonteMenu';
-	src: local('coolvetica'), url("../_fonts/coolvetica.ttf") format('ttf');
-}
-@font-face {
-  font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?5cc7aa');
-  src:  url('../fonts/icomoon.eot?5cc7aa#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?5cc7aa') format('truetype'),
-    url('../fonts/icomoon.woff?5cc7aa') format('woff'),
-    url('../fonts/icomoon.svg?5cc7aa#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
 *{
 	margin: 0;
 }
 body {
-	background-color: #ffffcc;
+	background-color: #f8f8f8 !important;
+	margin-top: 50px !important;
 }
 .log_no {
 	display: block;
@@ -26,29 +13,28 @@ body {
 .log_yes {
 	display: none !important;
 }
-#container {
-	width: 100%;
-	min-width: 1024PX;
-	background-color: #ffffcc;
+.carrinho {
+	position: relative;
 }
-#header {
-	width: 1024px;
-	height: 125px;
-	background: url(../_imagens/bg_header.jpg) repeat-x 0 0;
-	margin: auto;
+.carrinho-texto {
+	margin-left: 10px;
 }
-#topo {
-	height: 50px;
-	margin: auto;
+.carrinho-itens {
+	position: absolute;
+	top: 0px;
+	left: 18px;
+	color: #fff;
+	background: red;
+	width: 15px;
+	height: 15px;
+	font-size: 10px;
+	line-height: 17px;
+	border-radius: 620px;
 }
-#topo-esquerdo {
-	float: left;
-}
-#topo-esquerdo ul {
-	list-style: none;
+.margin-top {
+	margin-top: 10px;
 }
 #topo-esquerdo ul li {
-	display: inline-block;
 	margin: 15px 5px 15px 5px;
 	font-family: 'Montserrat', 'FonteMenu', sans-serif;
 	font-size:  13px;
@@ -65,24 +51,10 @@ body {
 #topo-esquerdo a:hover {
 	background-color: #ffff66;
 }
-#topo-direito {
-	float: right;
-}
-#topo-direito ul{
-	list-style: none;
-	padding-right: 30px;
-}
 #topo-direito ul li {
-	display: inline-block;
 	margin: 17px 5px 15px 5px;
 	font-family: 'Montserrat', 'FonteMenu', sans-serif;
 	font-size: 13px;
-}
-.icon-cart:before {
-	font-family: 'icomoon';
-	font-size: 16px;
-	content: "\e93a";
-	border: 1px solid #000;
 }
 #topo-direito a {
 	color: #cc3300; 
@@ -99,48 +71,11 @@ body {
 	border-radius: 5px;
 	border: 1px solid #ffff66;
 }
-#menu {
-	width: 1024px;
-	height: 75px;
-	margin: auto;
-	position: relative;
-}
-#menu img {
-	background: url(../_imagens/logo.png) no-repeat;
-	width: 150px;
-	height: 75px;
-	position: absolute;
-	top: 0px;
-	left: 20px;
-}
-#menu nav {
-	position: absolute;
-	top: 25px;
-	left: 220px;
-}
-#menu form {
-	position: relative;
-	top: 28px;
-	left: 750px;
-}
-#nav h1 {
-	display: none;
-}
-#nav ul {
-	text-decoration: none;
-}
-#nav ul li{
-	display: inline-block;
-	margin: 5px;
-}
-#nav a {
-	font-family: 'FonteMenu', sans-serif;
-	font-size: 16px;
-	color: #000;
-	text-decoration: none;
-}
-#nav a:hover {
-	color: #cc3300;
+#logo-brand {
+	width: 30px;
+	height: 25px;
+	background: url(../_imagens/logo-brand.png) no-repeat;
+	border: 0px;
 }
 /* ############## section conteudo ############# */
 #section {
@@ -156,9 +91,7 @@ body {
 	float: right;
 }
 .bloco {
-	width: 345px;
 	height: 130px;
-	margin: 1px;
 }
 .bloco:hover {
 	background-color: #ffff66;
@@ -239,58 +172,50 @@ body {
 	padding:  10px 10px 10px 20px;
 }
 .produto {
-	width: 155px;
-	margin: 5px 5px 15px 5px;
+	width: 255px;
+	margin-left: 10px;
+	margin-bottom: 10px;
 	float: left;
+	border: 1px solid #f1f1f1;
+	border-radius: 5px;
 }
 #produto img {
-	margin-left: 5px;
+	margin-left: 0;
 }
-#produto header {
+#produto h1 {
 	font-family: 'Arial', sans-serif;
-	font-size: 13px;
+	font-size: 16px;
 	margin: 5px;
 }
 #produto label {
 	font-family: 'Arial', sans-serif;
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: bold;
 	color: #000;
 	margin: 5px;
 }
+#produto label del {
+	font-size: 14px;
+}
 #produto p {
 	font-family: 'Arial', sans-serif;
-	font-size: 11px;
+	font-size: 12px;
 	margin: 5px;
 }
-#produto a {
-	display: inline-block;
-	padding: 5px;
-	margin: 5px 5px 3px 0px;
-	background-color: #ffff66;
-	border-radius: 3px;
-	color: #cc3300;
-	text-decoration: none;
-	font-family: 'Montserrat', 'FonteMenu', sans-serif;
-	font-size: 13px;
-	font-weight: bold;
-}
-#produto a:hover {
-	color: #fff;
-	background-color: #cc3300;
+div#produto:hover {
+	background: #f1f1f1;
 }
 #ver-todos a {
 	display: block;
-	padding: 140px 0px 140px 0px;
+	padding: 150px 0px 150px 0px;
 	text-align: center;
 	background-color: #fff;
-	color: #cc3300;
-	font-family: 'Montserrat', 'FonteMenu', sans-serif;
+	color: #000;
 	font-size: 13px;
-	font-weight: bold;
+	font-weight: bold; 
 }
 #ver-todos a:hover {
-	background-color: #ffff66;
+	background-color: #f1f1f1;
 }
 /* ######################## formularios ############################# */
 #formulario p {
@@ -309,7 +234,7 @@ body {
 	box-shadow: inset 2px 2px 2px #eee;
 	padding: 2px 5px;
 }
-#hint {
+.hint {
 	display: inline-block;
 	background-color: #fffbe4;
 	border: 1px solid #ccc;
@@ -319,7 +244,18 @@ body {
 	margin-left: 20px;
 	padding: 3px;
 }
-#formulario {}
+legend {
+	color: #888;
+	font-weight: bold;
+	font-size: 13pt;
+	font-family: sans-serif;
+}
+fieldset {
+	margin: 20px;
+}
+fieldset#endereco {
+	width: 300px;
+}
 
 /* ################### fim formularios ############################## */
 /* ##################### footer ##################################### */
