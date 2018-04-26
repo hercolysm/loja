@@ -23,8 +23,12 @@
 							<input type="email" class="form-control" name="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" title="exemplo@mail.com" placeholder="Email" required="required" onfocus="ocultarMsg()">
 						</div>
 						<div class="form-group">
+							<label for="cpf" class="control-label sr-only">CPF</label>
+							<input type="cpf" class="form-control" name="cpf" title="999.999.999-99" placeholder="CPF" required="required" onfocus="ocultarMsg()">
+						</div>
+						<div class="form-group">
 							<label for="senha" class="control-label sr-only">Senha</label>
-							<input type="senha" class="form-control" name="senha" placeholder="Senha" required="required" onfocus="ocultarMsg()">
+							<input type="password" class="form-control" name="senha" placeholder="Senha" required="required" onfocus="ocultarMsg()">
 						</div>
 						<div class="form-group">
 							<?php echo isset($msg_error)?$msg_error:""; ?>

@@ -27,10 +27,13 @@
 								</button>
 							</form>
 							<ul class="nav navbar-nav navbar-right">
-								<li class="log_no"><a href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
-								<li class="log_yes"><a href="sair.php" class="button">Sair</a></li>
-								<li class="log_no"><a href="#" data-toggle="modal" data-target="#modal-criar-conta">Criar conta</a></li>
-								<li class="log_yes"><a href="">Conta</a></li>
+								<?php if (isset($_SESSION['login'])): ?>
+									<li><a href="">Conta</a></li>
+									<li><a href="_funcoes/sair.php">Sair</a></li>
+								<?php else: ?>
+									<li><a href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
+									<li><a href="#" data-toggle="modal" data-target="#modal-criar-conta">Criar conta</a></li>
+								<?php endif; ?>
 							</ul>
 						</div><!-- fim collapse navbar -->
 					</div><!-- fim container navbar -->

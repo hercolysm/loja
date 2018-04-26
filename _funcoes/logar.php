@@ -22,17 +22,17 @@
 	
 	session_start();
 
-	if (isset($_SESSION['usuario']) && isset($_SESSION['senha'])) {
+	if (isset($_SESSION['login']) && isset($_SESSION['senha'])) {
 		echo "<script>jaLogado()</script>";
 	} else {
-		$usuario = $_POST["email"];
-		$senha = md5(addslashes($_POST["senha"])); // escapa e criptografa
+		$login = $_POST["cpf"];
+		$senha = md5("loja@online".$_POST["senha"]); // escapa e criptografa
 
-		$select = "SELECT * FROM usuario WHERE e_mail = '$usuario' AND senha = '$senha';";
+		$select = "SELECT * FROM usuarios WHERE cpf = '$login' AND senha = '$senha';";
 		$resultado = $conn->query($select);
 
 		if ($resultado->num_rows > 0) {
-			$_SESSION['usuario'] = $usuario;
+			$_SESSION['login'] = $login;
 			$_SESSION['senha'] = $senha;
 			echo "<script>loginSucesso()</script>";
 		} else {

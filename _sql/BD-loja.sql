@@ -1,32 +1,41 @@
+DROP DATABASE loja;
+
 CREATE DATABASE loja;
 
 USE loja;
 
-CREATE TABLE produtos (
-	cod_barra BIGINT NOT NULL primary key,
+CREATE TABLE usuarios (
+	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50) NOT NULL,
-	categoria INT NOT NULL,
+	cpf CHAR(11) NOT NULL,
+	senha CHAR(32) NOT NULL,
+	e_mail VARCHAR(50) NOT NULL,
+	dt_nasc DATE NOT NULL,
+	nivel_de_acesso INT(1) NOT NULL,
+	telefone VARCHAR(11) NOT NULL,
+	rua VARCHAR(50) NOT NULL,
+	numero VARCHAR(10) NOT NULL,
+	bairro VARCHAR(30) NOT NULL,
+	cidade VARCHAR(30) NOT NULL,
+	estado CHAR(2) NOT NULL,
+	cep CHAR(11) NOT NULL,
+	nacionalidade CHAR(3) NOT NULL
+);
+
+CREATE TABLE produtos (
+	id_produto BIGINT PRIMARY KEY AUTO_INCREMENT,
+	cod_barra VARCHAR(100) NOT NULL UNIQUE,
+	nome VARCHAR(50) NOT NULL,
+	id_categoria INT NOT NULL DEFAULT 1,
 	descricao VARCHAR(200),
 	custo FLOAT NOT NULL,
 	preco FLOAT NOT NULL,
 	saldo INT NOT NULL
 );
 
-CREATE TABLE usuario (
-	cpf CHAR(14) NOT NULL primary key,
-	nome VARCHAR(50) NOT NULL,
-	dt_nasc DATE NOT NULL,
-	nivel_de_acesso CHAR(1) NOT NULL,
-	telefone CHAR(15) NOT NULL,
-	endereco VARCHAR(100) NOT NULL,
-	senha VARCHAR(20) NOT NULL,
-	e_mail VARCHAR(50) NOT NULL
-);
 CREATE TABLE categorias (
-	cod_categoria INT primary key AUTO_INCREMENT,
+	id_categoria INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(30)
 );
-/*
-DROP table usuario;
-INSERT INTO usuario VALUES ('055.297.663-66','hercolys moraes araujo','1993-10-02','1','(85) 98869-6392','rua dos parlamentares, 1234, vicent pizon, 60.181-420','123456','hercolysmoraes@hotmail.com');
-SELECT * FROM usuario; */
+
+ALTER TABLE produtos ADD CONSTRAINT FK_produto_categoria FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria) ON UPDATE CASCADE;
